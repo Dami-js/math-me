@@ -1,3 +1,3 @@
 # math-me
 ---
-###For calculating functions
+### For calculating functions
