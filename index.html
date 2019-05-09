@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		#resultOutput {
+			background-color: #ccc;
+			width: 200px;
+			padding: 20px;
+			margin-top: 20px;
+			border: 3px dashed #333;
+		}
+	</style>
+</head>
+<body>
+	<p>Equation One: <strong>f(x) = x<sup>2</sup> - 6x + 15 </strong></p>
+	<label>Enter the value for x</label>
+	<input id="EQvalX" type="text" />
+	<br>
+	<button id="solveEqOne">Solve</button>
+	<button onclick="reset()">Reset</button>
+
+	<div id="resultOutput">
+		Ans: <strong id="solAns"></strong>
+	</div>
+
+	<script type="text/javascript">
+		let valueForX = document.getElementById("EQvalX"),
+			solveBtn = document.getElementById("solveEqOne"),
+			solAns = document.getElementById("solAns"),
+			EqOneOutput = document.getElementById("resultOutput");
+		let ans;
+
+
+		// let eq = 
+
+		solveBtn.addEventListener('click', (ev) => {
+			ev.preventDefault();
+			let x = Number(valueForX.value);
+			let sol = Math.pow(x, 2) - 6*x + 15
+			solAns.innerHTML = sol;
+		});
+
+		window.addEventListener('keyup', function (e) {
+		    if (e.keyCode === 13) {
+		    	let x = Number(valueForX.value);
+				let sol = Math.pow(x, 2) - 6*x + 15
+				solAns.innerHTML = sol;
+		    }
+		}, false);
+
+		function reset() {
+			valueForX.value = '';
+			solAns.innerHTML = '';
+		}
+	</script>
+</body>
+</html>
